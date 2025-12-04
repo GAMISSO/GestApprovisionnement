@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestApprovisionnement.Migrations
 {
     [DbContext(typeof(GestAppDbContext))]
-    partial class GestAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251204191912_NewReposifive")]
+    partial class NewReposifive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,6 +61,7 @@ namespace GestApprovisionnement.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<string>("Nom")
@@ -69,7 +73,7 @@ namespace GestApprovisionnement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Articles");
+                    b.ToTable("Articles", (string)null);
                 });
 
             modelBuilder.Entity("Models.Details", b =>

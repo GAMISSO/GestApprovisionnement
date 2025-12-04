@@ -1,6 +1,8 @@
 using Models;
 using System;
 using System.Linq;
+using Data;
+using Microsoft.Extensions.Logging;
 
 namespace GestApprovisionnement.Controllers
 {
@@ -16,12 +18,14 @@ namespace GestApprovisionnement.Controllers
         private readonly IApprovisionnementService _approvisionnementService;
         private readonly IArticleService _articleService;
         private readonly ILogger<ApprovisionnementController> _logger;
+        private readonly GestAppDbContext _context;
 
-        public ApprovisionnementController(IApprovisionnementService approvisionnementService, IArticleService articleService, ILogger<ApprovisionnementController> logger)
+        public ApprovisionnementController(IApprovisionnementService approvisionnementService, IArticleService articleService, ILogger<ApprovisionnementController> logger, GestAppDbContext context)
         {
             _approvisionnementService = approvisionnementService;
             _articleService = articleService;
             _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
@@ -41,56 +45,36 @@ namespace GestApprovisionnement.Controllers
             ;
         }
 
+        // [HttpGet("DebugCounts")]
+        // public IActionResult DebugCounts()
+        // {
+        //     try
+        //     {
+        //         var total = _context.Approvisionnements.Count();
+        //         var active = _context.Approvisionnements.Count(a => a.IsActive);
+        //         var sample = _context.Approvisionnements
+        //             .OrderByDescending(a => a.DateApprovisionnement)
+        //             .Take(5)
+        //             .Select(a => new { a.Id, a.Référence, a.IsActive, a.FournisseurId })
+        //             .ToList();
+
+        //         return Json(new { total, active, sample });
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         _logger.LogError(ex, "Error executing DebugCounts");
+        //         return StatusCode(500, ex.Message);
+        //     }
+        // }
+
         [HttpGet]
         public IActionResult Create()
         {
-            try
-            {
-                IEnumerable<Article> articles;
-                try
-                {
-                    articles = _articleService.GetAllArticles() ?? Enumerable.Empty<Article>();
-                }
-                catch (Exception ex)
-                {
-                    // si le service n'est pas implémenté, on renvoie une liste vide au lieu de planter
-                    _logger.LogWarning(ex, "Unable to load articles for Create view, returning empty list.");
-                    articles = Enumerable.Empty<Article>();
-                }
-
-                var vm = new ApprovisionnementCreateViewModel
-                {
-                    Approvisionnement = new Approvisionnement { Fournisseur = new Fournisseur() },
-                    Articles = articles
-                };
-
-                return View(vm);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error preparing Create view");
-                return View(new ApprovisionnementCreateViewModel());
-            }
+            return View();
+            // si le service n'est pas implémenté, on 
         }
 
-        [HttpPost("Create")]
-        public IActionResult Create([FromBody] Approvisionnement approvisionnement)
-        {
-            if (approvisionnement == null)
-            {
-                return BadRequest("Invalid approvisionnement data.");
-            }
 
-            try
-            {
-                var createdApprovisionnement = _approvisionnementService.CreateApprovisionnementAsync(approvisionnement);
-                return Ok(createdApprovisionnement);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
 
     }
 }

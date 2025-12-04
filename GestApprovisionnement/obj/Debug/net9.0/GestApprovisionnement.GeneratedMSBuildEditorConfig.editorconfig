@@ -9,53 +9,53 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestApprovisionnement
 build_property.RootNamespace = GestApprovisionnement
-build_property.ProjectDir = D:\C#\GestApprovisionnement\GestApprovisionnement\
+build_property.ProjectDir = d:\C#\GestApprovisionnement\GestApprovisionnement\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\C#\GestApprovisionnement\GestApprovisionnement
+build_property.MSBuildProjectDirectory = d:\C#\GestApprovisionnement\GestApprovisionnement
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Approvisionnement/Create.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Approvisionnement/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcm92aXNpb25uZW1lbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Approvisionnement/Index.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Approvisionnement/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwcm92aXNpb25uZW1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Article/Index.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Article/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Home/Index.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Home/Privacy.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Shared/Error.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Shared/_ValidationScriptsPartial.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/_ViewImports.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/_ViewStart.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Shared/_Layout.cshtml]
+[d:/C\#/GestApprovisionnement/GestApprovisionnement/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-d2idlfajd5

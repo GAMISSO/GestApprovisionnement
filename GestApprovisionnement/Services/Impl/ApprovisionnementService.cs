@@ -8,7 +8,6 @@ namespace Services
     {
         private readonly GestAppDbContext _context;
         private readonly ILogger<ApprovisionnementService> _logger;
-        private static int _currentId = 1;
 
 
         public ApprovisionnementService(GestAppDbContext context, ILogger<ApprovisionnementService> logger)
@@ -17,18 +16,6 @@ namespace Services
             _logger = logger;
         }
 
-        public async Task<Approvisionnement> CreateApprovisionnementAsync(Approvisionnement approvisionnement)
-        {
-            approvisionnement.Id = _currentId++;
-            _context.Approvisionnements.Add(approvisionnement);
-            return await Task.FromResult(approvisionnement);
-        }
-
-        public IEnumerable<Approvisionnement> GetApprovisionnementByIdAsync(int id)
-        {
-            var result = _context.Approvisionnements.Where(a => a.Id == id);
-            return result;
-        }
 
         public IEnumerable<Approvisionnement> GetAllApprovisionnements()
         {
@@ -42,7 +29,7 @@ namespace Services
             }
             catch (Exception)
             {
-                _logger.LogError( "An error occurred while fetching departements.");
+                _logger.LogError("An error occurred while fetching departements.");
                 throw;
             }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\GestApprovisionnement\\GestApprovisionnement\\GestApprovisionnement.csproj": {}
+    "d:\\C#\\GestApprovisionnement\\GestApprovisionnement\\GestApprovisionnement.csproj": {}
   },
   "projects": {
-    "D:\\C#\\GestApprovisionnement\\GestApprovisionnement\\GestApprovisionnement.csproj": {
+    "d:\\C#\\GestApprovisionnement\\GestApprovisionnement\\GestApprovisionnement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\GestApprovisionnement\\GestApprovisionnement\\GestApprovisionnement.csproj",
+        "projectUniqueName": "d:\\C#\\GestApprovisionnement\\GestApprovisionnement\\GestApprovisionnement.csproj",
         "projectName": "GestApprovisionnement",
-        "projectPath": "D:\\C#\\GestApprovisionnement\\GestApprovisionnement\\GestApprovisionnement.csproj",
+        "projectPath": "d:\\C#\\GestApprovisionnement\\GestApprovisionnement\\GestApprovisionnement.csproj",
         "packagesPath": "C:\\Users\\REMCOM\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\GestApprovisionnement\\GestApprovisionnement\\obj\\",
+        "outputPath": "d:\\C#\\GestApprovisionnement\\GestApprovisionnement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\REMCOM\\AppData\\Roaming\\NuGet\\NuGet.Config"
