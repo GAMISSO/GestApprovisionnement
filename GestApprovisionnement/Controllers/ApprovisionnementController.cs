@@ -37,7 +37,7 @@ namespace GestApprovisionnement.Controllers
         }
 
         [HttpPost("Create")]
-        public IActionResult CreateApprovisionnement([FromBody] Approvisionnement approvisionnement)
+        public IActionResult Create([FromBody] Approvisionnement approvisionnement)
         {
             if (approvisionnement == null)
             {

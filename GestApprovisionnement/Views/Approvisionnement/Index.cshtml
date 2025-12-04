@@ -1,13 +1,14 @@
 @{
     ViewData["Title"] = "Approvisionnement Page";
 }
-
+@model IEnumerable<Models.Approvisionnement>
 <div class="container py-4">
 
     <!-- Header -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="fw-bold">Gestion des Approvisionnements</h3>
-        <button class="btn btn-primary">+ Nouvel approvisionnement</button>
+        <a asp-controller="Approvisionnement"
+                                asp-action="Create"><button class="btn btn-primary">+ Nouvel approvisionnement</button></a>
     </div>
 
     <!-- Filtres -->
@@ -69,61 +70,23 @@
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td>APP-2023-001</td>
-                    <td>15/04/2023</td>
-                    <td>Textiles Dakar SARL</td>
-                    <td><span class="badge badge-blue">7 Articles</span></td>
-                    <td>750 000 FCFA</td>
-                    <td><span class="badge badge-green">Reçu</span></td>
-                    <td class="table-actions">
-                        <button class="btn btn-warning btn-sm text-white">✎</button>
-                        <button class="btn btn-info btn-sm text-white">👁</button>
-                        <button class="btn btn-danger btn-sm">🗑</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>APP-2023-002</td>
-                    <td>10/04/2023</td>
-                    <td>Mercerie Centrale</td>
-                    <td><span class="badge badge-blue">4 Articles</span></td>
-                    <td>320 000 FCFA</td>
-                    <td><span class="badge badge-orange">En cours</span></td>
-                    <td class="table-actions">
-                        <button class="btn btn-warning btn-sm text-white">✎</button>
-                        <button class="btn btn-info btn-sm text-white">👁</button>
-                        <button class="btn btn-danger btn-sm">🗑</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>APP-2023-003</td>
-                    <td>05/04/2023</td>
-                    <td>Tissus Premium</td>
-                    <td><span class="badge badge-blue">6 Articles</span></td>
-                    <td>450 000 FCFA</td>
-                    <td><span class="badge badge-green">Reçu</span></td>
-                    <td class="table-actions">
-                        <button class="btn btn-warning btn-sm text-white">✎</button>
-                        <button class="btn btn-info btn-sm text-white">👁</button>
-                        <button class="btn btn-danger btn-sm">🗑</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>APP-2023-004</td>
-                    <td>01/04/2023</td>
-                    <td>Textiles Dakar SARL</td>
-                    <td><span class="badge badge-blue">8 Articles</span></td>
-                    <td>680 000 FCFA</td>
-                    <td><span class="badge badge-green">Reçu</span></td>
-                    <td class="table-actions">
-                        <button class="btn btn-warning btn-sm text-white">✎</button>
-                        <button class="btn btn-info btn-sm text-white">👁</button>
-                        <button class="btn btn-danger btn-sm">🗑</button>
-                    </td>
-                </tr>
+                
+                    @foreach (var departement in Model)
+                    {
+                        <tr>
+                        <td>@departement.Id</td>
+                        <td>@departement.DateApprovisionnement</td>
+                        <td>@departement.Fournisseur.Nom</td>
+                        <td><span class="btn btn-sm btn-info">@departement.Detailss.Count()</span></td>
+                        <td>@departement.MontantTotal FCFA</td>
+                        <td><span class="badge bg-success">Reçu</span></td>
+                        <td class="table-actions">
+                            <button class="btn btn-warning btn-sm text-white">✎</button>
+                            <button class="btn btn-info btn-sm text-white">👁</button>
+                            <button class="btn btn-danger btn-sm">🗑</button>
+                        </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>

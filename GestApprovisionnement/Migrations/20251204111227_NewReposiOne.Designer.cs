@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestApprovisionnement.Migrations
 {
     [DbContext(typeof(GestAppDbContext))]
-    partial class GestAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251204111227_NewReposiOne")]
+    partial class NewReposiOne
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,6 +26,9 @@ namespace GestApprovisionnement.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ArticleId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateApprovisionnement")
@@ -49,6 +55,8 @@ namespace GestApprovisionnement.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ArticleId");
+
                     b.HasIndex("FournisseurId");
 
                     b.ToTable("Approvisionnements", (string)null);
@@ -64,7 +72,16 @@ namespace GestApprovisionnement.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<decimal>("PrixUnitaire")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<int>("Quantite")
+                        .HasColumnType("int");
+
                     b.Property<int>("QuantiteStock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("montant")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -119,6 +136,10 @@ namespace GestApprovisionnement.Migrations
 
             modelBuilder.Entity("Models.Approvisionnement", b =>
                 {
+                    b.HasOne("Models.Article", null)
+                        .WithMany("Approvisionnements")
+                        .HasForeignKey("ArticleId");
+
                     b.HasOne("Models.Fournisseur", "Fournisseur")
                         .WithMany("Approvisionnements")
                         .HasForeignKey("FournisseurId")
@@ -137,7 +158,7 @@ namespace GestApprovisionnement.Migrations
                         .IsRequired();
 
                     b.HasOne("Models.Article", "Article")
-                        .WithMany("Detailss")
+                        .WithMany()
                         .HasForeignKey("ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -154,7 +175,7 @@ namespace GestApprovisionnement.Migrations
 
             modelBuilder.Entity("Models.Article", b =>
                 {
-                    b.Navigation("Detailss");
+                    b.Navigation("Approvisionnements");
                 });
 
             modelBuilder.Entity("Models.Fournisseur", b =>

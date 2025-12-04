@@ -168,3 +168,4 @@ D:\C#\GestApprovisionnement\GestApprovisionnement\obj\Debug\net9.0\refint\GestAp
 D:\C#\GestApprovisionnement\GestApprovisionnement\obj\Debug\net9.0\GestApprovisionnement.pdb
 D:\C#\GestApprovisionnement\GestApprovisionnement\obj\Debug\net9.0\GestApprovisionnement.genruntimeconfig.cache
 D:\C#\GestApprovisionnement\GestApprovisionnement\obj\Debug\net9.0\ref\GestApprovisionnement.dll
+D:\C#\GestApprovisionnement\GestApprovisionnement\obj\Debug\net9.0\GestApprovisionnement.sourcelink.json
