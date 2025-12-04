@@ -1,0 +1,112 @@
+@{
+    ViewData["Title"] = "ApprovisionnementCreate Page";
+}
+
+
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="fw-bold">Nouvel approvisionnement</h3>
+        <a href="#" class="btn btn-outline-primary">← Retour à la liste</a>
+    </div>
+
+    <div class="card p-4 shadow-sm">
+
+        <div class="row">
+
+            <!-- Informations générales -->
+            <div class="col-md-6 mb-4">
+                <h5 class="fw-semibold mb-3">Informations générales</h5>
+
+                <div class="mb-3">
+                    <label class="form-label">Date d’approvisionnement</label>
+                    <input type="date" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Fournisseur</label>
+                    <select class="form-select">
+                        <option>Sélectionner un fournisseur</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Référence</label>
+                    <input type="text" class="form-control" placeholder="Référence de l’approvisionnement">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Observations</label>
+                    <textarea class="form-control" rows="3" placeholder="Observations ou commentaires"></textarea>
+                </div>
+            </div>
+
+            <!-- Détails de l’approvisionnement -->
+            <div class="col-md-6 mb-4">
+                <h5 class="fw-semibold mb-3">Détails de l’approvisionnement</h5>
+
+                <div class="mb-3">
+                    <label class="form-label">Article</label>
+                    <select class="form-select">
+                        <option>Sélectionner un article</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Quantité</label>
+                        <input type="number" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Prix unitaire (FCFA)</label>
+                        <input type="number" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Montant total (FCFA)</label>
+                        <input type="number" class="form-control" disabled>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mt-3">
+                    <button class="btn btn-outline-secondary">Annuler</button>
+                    <button class="btn btn-primary">Enregistrer l’approvisionnement</button>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Bouton ajouter article -->
+        <button class="btn btn-outline-primary mb-3">+ Ajouter un autre article</button>
+
+        <!-- Tableau -->
+        <div class="table-responsive">
+            <table class="table table-sm table-bordered text-center align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Article</th>
+                        <th>Quantité</th>
+                        <th>Prix unitaire</th>
+                        <th>Montant</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="text-muted">Aucun article ajouté</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-end fw-bold fs-5">
+            Total : 0 FCFA
+        </div>
+
+    </div>
+
+</div>

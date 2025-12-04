@@ -1,0 +1,174 @@
+@{
+    ViewData["Title"] = "Approvisionnement Page";
+}
+
+<div class="container py-4">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Gestion des Approvisionnements</h3>
+        <button class="btn btn-primary">+ Nouvel approvisionnement</button>
+    </div>
+
+    <!-- Filtres -->
+    <div class="card p-4 shadow-sm mb-4">
+        <h6 class="fw-semibold mb-3">Filtres et recherche</h6>
+
+        <div class="row g-3">
+
+            <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="Rechercher...">
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option>Tous les fournisseurs</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option>Tous les articles</option>
+                </select>
+            </div>
+
+            <div class="col-md-3 d-flex gap-2">
+                <input type="date" class="form-control">
+                <input type="date" class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option>Date (récent → ancien)</option>
+                </select>
+            </div>
+
+            <div class="col-md-3 d-flex gap-2">
+                <button class="btn btn-primary flex-grow-1">Filtrer</button>
+                <button class="btn btn-outline-secondary flex-grow-1">Réinitialiser</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Tableau -->
+    <div class="card shadow-sm">
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle text-center mb-0">
+                <thead class="table-light">
+                <tr>
+                    <th>Référence</th>
+                    <th>Date</th>
+                    <th>Fournisseur</th>
+                    <th>Articles</th>
+                    <th>Montant total</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>APP-2023-001</td>
+                    <td>15/04/2023</td>
+                    <td>Textiles Dakar SARL</td>
+                    <td><span class="badge badge-blue">7 Articles</span></td>
+                    <td>750 000 FCFA</td>
+                    <td><span class="badge badge-green">Reçu</span></td>
+                    <td class="table-actions">
+                        <button class="btn btn-warning btn-sm text-white">✎</button>
+                        <button class="btn btn-info btn-sm text-white">👁</button>
+                        <button class="btn btn-danger btn-sm">🗑</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>APP-2023-002</td>
+                    <td>10/04/2023</td>
+                    <td>Mercerie Centrale</td>
+                    <td><span class="badge badge-blue">4 Articles</span></td>
+                    <td>320 000 FCFA</td>
+                    <td><span class="badge badge-orange">En cours</span></td>
+                    <td class="table-actions">
+                        <button class="btn btn-warning btn-sm text-white">✎</button>
+                        <button class="btn btn-info btn-sm text-white">👁</button>
+                        <button class="btn btn-danger btn-sm">🗑</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>APP-2023-003</td>
+                    <td>05/04/2023</td>
+                    <td>Tissus Premium</td>
+                    <td><span class="badge badge-blue">6 Articles</span></td>
+                    <td>450 000 FCFA</td>
+                    <td><span class="badge badge-green">Reçu</span></td>
+                    <td class="table-actions">
+                        <button class="btn btn-warning btn-sm text-white">✎</button>
+                        <button class="btn btn-info btn-sm text-white">👁</button>
+                        <button class="btn btn-danger btn-sm">🗑</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>APP-2023-004</td>
+                    <td>01/04/2023</td>
+                    <td>Textiles Dakar SARL</td>
+                    <td><span class="badge badge-blue">8 Articles</span></td>
+                    <td>680 000 FCFA</td>
+                    <td><span class="badge badge-green">Reçu</span></td>
+                    <td class="table-actions">
+                        <button class="btn btn-warning btn-sm text-white">✎</button>
+                        <button class="btn btn-info btn-sm text-white">👁</button>
+                        <button class="btn btn-danger btn-sm">🗑</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="d-flex justify-content-center p-3">
+            <nav>
+                <ul class="pagination mb-0">
+                    <li class="page-item"><a class="page-link" href="#">Précédent</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="row mt-4 g-4">
+
+        <div class="col-md-4">
+            <div class="stat-card">
+                <h6 class="text-muted">Total des approvisionnements</h6>
+                <h3 class="fw-bold text-primary">2 720 000 FCFA</h3>
+                <small class="text-muted">Période : Avril 2023</small>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card">
+                <h6 class="text-muted">Nombre d’approvisionnements</h6>
+                <h3 class="fw-bold">5</h3>
+                <small class="text-muted">Période : Avril 2023</small>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card">
+                <h6 class="text-muted">Fournisseur principal</h6>
+                <h4 class="fw-bold text-primary">Textiles Dakar</h4>
+                <small class="text-muted">1 430 000 FCFA (52.5%)</small>
+            </div>
+        </div>
+
+    </div>
+
+</div>
