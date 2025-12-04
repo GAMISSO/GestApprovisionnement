@@ -1,8 +1,7 @@
 @{
     ViewData["Title"] = "ApprovisionnementCreate Page";
 }
-
-
+@model GestApprovisionnement.ViewModels.ApprovisionnementCreateViewModel
 
 <div class="container py-4">
 
@@ -48,8 +47,15 @@
 
                 <div class="mb-3">
                     <label class="form-label">Article</label>
-                    <select class="form-select">
+                    <select class="form-select" id="articleSelect">
                         <option>Sélectionner un article</option>
+                        @if (Model?.Articles != null)
+                        {
+                            foreach (var a in Model.Articles)
+                            {
+                                <option value="@a.Id">@a.Nom</option>
+                            }
+                        }
                     </select>
                 </div>
 

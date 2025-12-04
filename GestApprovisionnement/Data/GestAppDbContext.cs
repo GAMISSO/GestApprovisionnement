@@ -6,6 +6,7 @@ namespace Data
     public class GestAppDbContext: DbContext
     {
         public DbSet<Approvisionnement> Approvisionnements { get; set; }=null!;
+        public DbSet<Article> Articles { get; set; }=null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
@@ -23,6 +24,12 @@ namespace Data
             .IsRequired().
             HasMaxLength(50);
             // Configuration supplémentaire si nécessaire
+            modelBuilder.Entity<Article>().ToTable("Articles");
+            modelBuilder.Entity<Article>().HasKey(d => d.Id);
+            modelBuilder.Entity<Article>()
+            .Property(d => d.Id)
+            .IsRequired().
+            HasMaxLength(50);
         }
     }
 }

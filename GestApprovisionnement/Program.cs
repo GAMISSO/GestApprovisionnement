@@ -4,6 +4,7 @@ using Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<GestAppDbContext>();
 builder.Services.AddScoped<IApprovisionnementService, ApprovisionnementService>();
+builder.Services.AddScoped<IArticleService, ArticleService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

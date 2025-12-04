@@ -35,7 +35,6 @@
 
             <div class="col-md-3 d-flex gap-2">
                 <input type="date" class="form-control">
-                <input type="date" class="form-control">
             </div>
 
             <div class="col-md-3">
@@ -71,14 +70,14 @@
 
                 <tbody>
                 
-                    @foreach (var departement in Model)
+                    @foreach (var approvisionnement in Model)
                     {
                         <tr>
-                        <td>@departement.Id</td>
-                        <td>@departement.DateApprovisionnement</td>
-                        <td>@departement.Fournisseur.Nom</td>
-                        <td><span class="btn btn-sm btn-info">@departement.Detailss.Count()</span></td>
-                        <td>@departement.MontantTotal FCFA</td>
+                        <td>@approvisionnement.Id</td>
+                        <td>@approvisionnement.DateApprovisionnement</td>
+                        <td>@approvisionnement.Fournisseur.Nom</td>
+                        <td><span class="btn btn-sm btn-info">@approvisionnement.Detailss.Count()</span></td>
+                        <td>@approvisionnement.MontantTotal FCFA</td>
                         <td><span class="badge bg-success">Reçu</span></td>
                         <td class="table-actions">
                             <button class="btn btn-warning btn-sm text-white">✎</button>
